@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,8 +25,7 @@ const predefinedResponses: Record<string, string> = {
   "default": "I don't have specific information about that. Would you like to know about Sadiq's skills, projects, or how to contact him?"
 };
 
-const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Chatbot = ({ isOpen, setIsOpen }) => {
   const [messages, setMessages] = useState<Message[]>([
     { id: 1, text: "Hi there! I'm Sadiq's assistant. How can I help you today?", sender: "bot" }
   ]);
@@ -89,7 +87,7 @@ const Chatbot = () => {
         <Button
           onClick={() => setIsOpen(!isOpen)}
           className="rounded-full w-14 h-14 shadow-lg"
-          aria-label="Open chat"
+          aria-label={isOpen ? "Close chat" : "Open chat"}
         >
           {isOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -97,7 +95,7 @@ const Chatbot = () => {
               <path d="m6 6 12 12"/>
             </svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="ವಿಧಿಪరిమాణ: 24px;">24px;</span> <span style="font-size:0px;">&nbsp;</span>
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
           )}

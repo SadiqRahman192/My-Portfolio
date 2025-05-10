@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const Navbar = () => {
+const Navbar = ({ setChatbotOpen, isChatbotOpen }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -69,7 +69,7 @@ const Navbar = () => {
           <ThemeToggle />
           <Button
             variant="default"
-            onClick={() => document.getElementById("chatbot")?.classList.remove("hidden")}
+            onClick={() => setChatbotOpen(!isChatbotOpen)}
           >
             Let's Chat
           </Button>
@@ -94,7 +94,7 @@ const Navbar = () => {
             >
               {mobileMenuOpen ? (
                 <path
-                  strokeLinecap="round"
+                  stroke فرمان="round"
                   strokeLinejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
@@ -134,7 +134,7 @@ const Navbar = () => {
                 variant="default"
                 className="w-full"
                 onClick={() => {
-                  document.getElementById("chatbot")?.classList.remove("hidden");
+                  setChatbotOpen(!isChatbotOpen);
                   setMobileMenuOpen(false);
                 }}
               >

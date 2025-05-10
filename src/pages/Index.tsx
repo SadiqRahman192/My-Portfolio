@@ -1,5 +1,4 @@
-
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -10,6 +9,8 @@ import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
+  const [isChatbotOpen, setChatbotOpen] = useState(false);
+
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
@@ -27,14 +28,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
+      <Navbar isChatbotOpen={isChatbotOpen} setChatbotOpen={setChatbotOpen} />
       <Hero />
       <About />
       <Skills />
       <Projects />
       <Contact />
       <Footer />
-      <Chatbot />
+      <Chatbot isOpen={isChatbotOpen} setIsOpen={setChatbotOpen} />
     </div>
   );
 };
