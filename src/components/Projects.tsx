@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Food Order App",
     description: "A full-stack MERN application with user authentication, product management, shopping cart, and payment integration using Stripe.",
-    image: "https://imageshttps://plus.unsplash.com/premium_photo-1683657860186-6afce5df3c0a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.unsplash.com/photo-1557821552-17105176677c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MzEyODMzMg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    image: "https://images.unsplash.com/photo-1573470571028-a0ca7a723959?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["React", "Node.js", "MongoDB", "Express"],
     demoLink: "#",
     githubLink: "#"
