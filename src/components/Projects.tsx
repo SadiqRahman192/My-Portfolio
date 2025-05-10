@@ -13,12 +13,12 @@ const projects = [
     githubLink: "#"
   },
   {
-    title: "Social Media Dashboard",
+    title: "Event Management Website",
     description: "A responsive dashboard for social media analytics with real-time data visualization using Socket.io and Chart.js.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MzEyODMzMg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    image: "https://images.unsplash.com/photo-1561489396-888724a1543d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["React", "Chart.js", "Socket.io", "Express"],
     demoLink: "#",
-    githubLink: "#"
+    githubLink: "https://eventwebbybsadiq.netlify.app/"
   },
   {
     title: "Task Management App",
