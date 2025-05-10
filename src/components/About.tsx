@@ -70,7 +70,7 @@ const About = () => {
                       <rect width="4" height="12" x="2" y="9"/>
                       <circle cx="4" cy="4" r="2"/>
                     </svg>
-                    LinkedIn
+avsdjvasj
                   </Button>
                 </a>
                 <a href="#contact">
