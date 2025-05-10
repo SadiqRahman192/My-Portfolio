@@ -21,9 +21,9 @@ const projects = [
     githubLink: "https://eventwebbybsadiq.netlify.app/"
   },
   {
-    title: "E-Commerce Platform",
+    title: "Blainy Ai Research Paper",
     description: "A collaborative task management application with real-time updates, drag-and-drop interface, and team collaboration features.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MzEyODMzMg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHfc2tovo-_mlyQ5XkpNxKJhxZW3hmc9oQ0ncsFZp6tg&s&ec=72940544",
     tags: ["React", "Redux", "MongoDB", "Express"],
     demoLink: "#",
     githubLink: "#"
