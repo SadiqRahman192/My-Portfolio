@@ -1,4 +1,3 @@
-
 import { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Text, useTexture } from "@react-three/drei";
@@ -43,7 +42,7 @@ const FloatingObjects = () => {
       <mesh ref={mesh2} position={[2, -0.5, 1]}>
         <icosahedronGeometry args={[0.7, 1]} />
         <meshStandardMaterial
-          color="#5E9CBA"
+          color="#0993D7"
           metalness={0.7}
           roughness={0.2}
         />
@@ -52,7 +51,7 @@ const FloatingObjects = () => {
       <mesh ref={mesh3} position={[0, 1, -1]}>
         <octahedronGeometry args={[0.6]} />
         <meshStandardMaterial
-          color="#00C2FF"
+          color="#0993D7"
           metalness={0.5}
           roughness={0.2}
         />
