@@ -27,7 +27,7 @@ const About = () => {
               <div className="relative w-full aspect-square max-w-sm mx-auto">
                 <div className="absolute inset-0 bg-primary/20 rounded-lg -rotate-6"></div>
                 <img 
-                  src="../public/lovable-uploads/sadiq1.jpg" 
+                  src="../public/lovable-uploads/sadiq.jpg" 
                   alt="Sadiq Izar"
                   className="rounded-lg relative z-10 w-full h-full object-cover"
                 />
@@ -70,7 +70,7 @@ const About = () => {
                       <rect width="4" height="12" x="2" y="9"/>
                       <circle cx="4" cy="4" r="2"/>
                     </svg>
-                    Alisa
+                    LinkedIn
                   </Button>
                 </a>
                 <a href="#contact">
