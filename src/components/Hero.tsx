@@ -30,7 +30,7 @@ const Hero = () => {
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary shadow-xl">
               <img 
                 src="/lovable-uploads/51fd0751-dce0-4a51-94b4-069e89cbb84e.png" 
-                alt="ASASAS Izar"
+                alt="Sadiq Izar"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -44,7 +44,7 @@ const Hero = () => {
           >
             <span className="block">Hi, I am</span>
             <span className="text-gradient text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
-              ASASAS Izar
+              Sadiq Izar
             </span>
           </motion.h1>
           

@@ -27,7 +27,7 @@ const About = () => {
               <div className="relative w-full aspect-square max-w-sm mx-auto">
                 <div className="absolute inset-0 bg-primary/20 rounded-lg -rotate-6"></div>
                 <img 
-                  src="../public/lovable-uploads/sadiq.jpg" 
+                  src="../public/lovable-uploads/sadiq1.jpg" 
                   alt="Sadiq Izar"
                   className="rounded-lg relative z-10 w-full h-full object-cover"
                 />
