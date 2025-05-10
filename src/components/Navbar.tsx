@@ -7,6 +7,9 @@ const Navbar = ({ setChatbotOpen, isChatbotOpen }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Log props to verify they are passed correctly
+  console.log("Navbar props:", { isChatbotOpen, setChatbotOpen });
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -27,11 +30,16 @@ const Navbar = ({ setChatbotOpen, isChatbotOpen }) => {
     { name: "Contact", href: "contact" },
   ];
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false); // Close mobile menu after clicking
+      const offset = 70; // Adjust for navbar height (~57px + padding)
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - offset,
+        behavior: "smooth",
+      });
+      setMobileMenuOpen(false);
     }
   };
 
@@ -69,7 +77,10 @@ const Navbar = ({ setChatbotOpen, isChatbotOpen }) => {
           <ThemeToggle />
           <Button
             variant="default"
-            onClick={() => setChatbotOpen(!isChatbotOpen)}
+            onClick={() => {
+              console.log("Let's Chat clicked, toggling isChatbotOpen:", !isChatbotOpen);
+              setChatbotOpen(!isChatbotOpen);
+            }}
           >
             Let's Chat
           </Button>
@@ -94,7 +105,7 @@ const Navbar = ({ setChatbotOpen, isChatbotOpen }) => {
             >
               {mobileMenuOpen ? (
                 <path
-                  stroke فرمان="round"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
@@ -134,6 +145,7 @@ const Navbar = ({ setChatbotOpen, isChatbotOpen }) => {
                 variant="default"
                 className="w-full"
                 onClick={() => {
+                  console.log("Mobile Let's Chat clicked, toggling isChatbotOpen:", !isChatbotOpen);
                   setChatbotOpen(!isChatbotOpen);
                   setMobileMenuOpen(false);
                 }}

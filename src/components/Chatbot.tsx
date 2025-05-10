@@ -15,7 +15,7 @@ const predefinedResponses: Record<string, string> = {
   "hello": "Hi there! How can I assist you with Sadiq's portfolio?",
   "who are you": "I'm a virtual assistant for Sadiq Izar's portfolio. I can tell you about his skills, projects, or how to contact him.",
   "skills": "Sadiq is a MERN Stack developer skilled in MongoDB, Express.js, React, and Node.js. He also has experience with TypeScript, Redux, and various frontend and backend technologies.",
-  "contact": "You can contact Sadiq via email at sadiq.izar@example.com or use the contact form on this website.",
+  "contact": "You can contact Sadiq via email at sadiqrahman192@gmail.com or use the contact form on this website.",
   "projects": "Sadiq has worked on various projects including e-commerce platforms, social media dashboards, and task management applications. Check out the Projects section for more details!",
   "experience": "Sadiq has extensive experience building modern web applications using the MERN stack and related technologies.",
   "location": "Sadiq is based in San Francisco, California.",
@@ -32,6 +32,9 @@ const Chatbot = ({ isOpen, setIsOpen }) => {
   const [input, setInput] = useState("");
   const [isBotTyping, setIsBotTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Log props to verify they are passed correctly
+  console.log("Chatbot props:", { isOpen, setIsOpen });
 
   useEffect(() => {
     scrollToBottom();
@@ -85,7 +88,10 @@ const Chatbot = ({ isOpen, setIsOpen }) => {
       {/* Chatbot Icon */}
       <div className="fixed bottom-6 right-6 z-40">
         <Button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            console.log("Chatbot icon clicked, toggling isOpen:", !isOpen);
+            setIsOpen(!isOpen);
+          }}
           className="rounded-full w-14 h-14 shadow-lg"
           aria-label={isOpen ? "Close chat" : "Open chat"}
         >
@@ -95,7 +101,7 @@ const Chatbot = ({ isOpen, setIsOpen }) => {
               <path d="m6 6 12 12"/>
             </svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="ವಿಧಿಪరిమాణ: 24px;">24px;</span> <span style="font-size:0px;">&nbsp;</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
           )}
