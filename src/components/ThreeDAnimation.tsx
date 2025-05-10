@@ -34,7 +34,7 @@ const FloatingObjects = () => {
       <mesh ref={mesh1} position={[-2, 0, 0]}>
         <torusKnotGeometry args={[0.5, 0.2, 128, 32]} />
         <meshStandardMaterial
-          color="#9b87f5"
+          color="#0993D7"
           metalness={0.5}
           roughness={0.2}
         />
@@ -43,7 +43,7 @@ const FloatingObjects = () => {
       <mesh ref={mesh2} position={[2, -0.5, 1]}>
         <icosahedronGeometry args={[0.7, 1]} />
         <meshStandardMaterial
-          color="#7E69AB"
+          color="#5E9CBA"
           metalness={0.7}
           roughness={0.2}
         />
@@ -52,7 +52,7 @@ const FloatingObjects = () => {
       <mesh ref={mesh3} position={[0, 1, -1]}>
         <octahedronGeometry args={[0.6]} />
         <meshStandardMaterial
-          color="#1EAEDB"
+          color="#00C2FF"
           metalness={0.5}
           roughness={0.2}
         />
