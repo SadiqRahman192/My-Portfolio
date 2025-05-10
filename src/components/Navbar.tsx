@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
@@ -21,12 +20,20 @@ const Navbar = () => {
   }, [scrolled]);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "home" },
+    { name: "About", href: "about" },
+    { name: "Skills", href: "skills" },
+    { name: "Projects", href: "projects" },
+    { name: "Contact", href: "contact" },
   ];
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setMobileMenuOpen(false); // Close mobile menu after clicking
+    }
+  };
 
   return (
     <nav
@@ -38,26 +45,32 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold text-gradient">
+        <button
+          onClick={() => scrollToSection("home")}
+          className="text-xl font-bold text-gradient"
+        >
           Sadiq Izar
-        </a>
+        </button>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
           <ul className="flex gap-6">
             {navItems.map((item) => (
               <li key={item.name}>
-                <a
-                  href={item.href}
+                <button
+                  onClick={() => scrollToSection(item.href)}
                   className="text-foreground hover:text-primary transition-colors font-medium"
                 >
                   {item.name}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
           <ThemeToggle />
-          <Button variant="default" onClick={() => document.getElementById('chatbot')?.classList.remove('hidden')}>
+          <Button
+            variant="default"
+            onClick={() => document.getElementById("chatbot")?.classList.remove("hidden")}
+          >
             Let's Chat
           </Button>
         </div>
@@ -108,21 +121,20 @@ const Navbar = () => {
           <ul className="flex flex-col gap-4">
             {navItems.map((item) => (
               <li key={item.name}>
-                <a
-                  href={item.href}
+                <button
+                  onClick={() => scrollToSection(item.href)}
                   className="text-foreground hover:text-primary transition-colors block py-2"
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </button>
               </li>
             ))}
             <li>
-              <Button 
-                variant="default" 
+              <Button
+                variant="default"
                 className="w-full"
                 onClick={() => {
-                  document.getElementById('chatbot')?.classList.remove('hidden');
+                  document.getElementById("chatbot")?.classList.remove("hidden");
                   setMobileMenuOpen(false);
                 }}
               >
