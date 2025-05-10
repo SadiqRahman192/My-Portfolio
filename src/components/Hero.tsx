@@ -22,7 +22,7 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-primary/30 blur-3xl animate-pulse-light" />
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MzEyODMzMg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" 
+                src="/lovable-uploads/51fd0751-dce0-4a51-94b4-069e89cbb84e.png" 
                 alt="Sadiq Izar"
                 className="w-full h-full object-cover"
               />
