@@ -75,7 +75,7 @@ const ThreeDAnimation = () => {
       <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
         <ambientLight intensity={0.8} />
         <pointLight position={[10, 10, 10]} intensity={1} />
-        <pointLight position={[-10, -10, -10]} color="#9b87f5" intensity={0.5} />
+        <pointLight position={[-10, -10, -10]} color="#0993D7" intensity={0.5} />
         <FloatingObjects />
         <OrbitControls 
           enableZoom={false} 
