@@ -84,7 +84,7 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-red-600 dark:from-primary dark:to-red-400;
   }
 }
 
