@@ -1,3 +1,4 @@
+
 import { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Text, useTexture } from "@react-three/drei";
@@ -33,7 +34,7 @@ const FloatingObjects = () => {
       <mesh ref={mesh1} position={[-2, 0, 0]}>
         <torusKnotGeometry args={[0.5, 0.2, 128, 32]} />
         <meshStandardMaterial
-          color="#0993D7"
+          color="#9b87f5"
           metalness={0.5}
           roughness={0.2}
         />
@@ -42,7 +43,7 @@ const FloatingObjects = () => {
       <mesh ref={mesh2} position={[2, -0.5, 1]}>
         <icosahedronGeometry args={[0.7, 1]} />
         <meshStandardMaterial
-          color="#0993D7"
+          color="#7E69AB"
           metalness={0.7}
           roughness={0.2}
         />
@@ -51,7 +52,7 @@ const FloatingObjects = () => {
       <mesh ref={mesh3} position={[0, 1, -1]}>
         <octahedronGeometry args={[0.6]} />
         <meshStandardMaterial
-          color="#0993D7"
+          color="#1EAEDB"
           metalness={0.5}
           roughness={0.2}
         />
@@ -74,7 +75,7 @@ const ThreeDAnimation = () => {
       <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
         <ambientLight intensity={0.8} />
         <pointLight position={[10, 10, 10]} intensity={1} />
-        <pointLight position={[-10, -10, -10]} color="#0993D7" intensity={0.5} />
+        <pointLight position={[-10, -10, -10]} color="#9b87f5" intensity={0.5} />
         <FloatingObjects />
         <OrbitControls 
           enableZoom={false} 
