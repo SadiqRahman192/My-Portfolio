@@ -23,7 +23,7 @@ const projects = [
   {
     title: "Blainy Ai Research Paper",
     description: "A React-based frontend for the Blainy AI research paper web app, built with TypeScript and Tailwind CSS, focusing on a responsive UI with paper management and citation tools. Key features include citation generation, responsive UI, and dark/light mode support.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHfc2tovo-_mlyQ5XkpNxKJhxZW3hmc9oQ0ncsFZp6tg&s&ec=72940544",
+    image: "https://images.genai.works/image_ef8535309e.jpg?width=900&height=900&quality=50",
     tags: ["React", "Redux", "MongoDB", "Express"],
     demoLink: "#",
     githubLink: "#"
