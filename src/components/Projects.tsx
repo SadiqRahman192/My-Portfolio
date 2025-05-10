@@ -21,9 +21,9 @@ const projects = [
     githubLink: "https://eventwebbybsadiq.netlify.app/"
   },
   {
-    title: "Task Management App",
+    title: "Food Order App",
     description: "A collaborative task management application with real-time updates, drag-and-drop interface, and team collaboration features.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MzEyODMzMg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    image: "https://images.unsplash.chttps://plus.unsplash.com/premium_photo-1683657860186-6afce5df3c0a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dom/photo-1484480974693-6ca0a78fb36b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MzEyODMzMg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     tags: ["React", "Redux", "MongoDB", "Express"],
     demoLink: "#",
     githubLink: "#"
