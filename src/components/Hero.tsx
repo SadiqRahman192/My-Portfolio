@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section 
       id="home" 
@@ -57,10 +64,19 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button size="lg" className="px-6">
+            <Button 
+              size="lg" 
+              className="px-6"
+              onClick={() => scrollToSection('projects')}
+            >
               View Projects
             </Button>
-            <Button size="lg" variant="outline" className="px-6">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="px-6"
+              onClick={() => scrollToSection('contact')}
+            >
               Contact Me
             </Button>
           </motion.div>
