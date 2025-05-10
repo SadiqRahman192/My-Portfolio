@@ -6,23 +6,23 @@ import { Button } from "@/components/ui/button";
 const projects = [
   {
     title: "Food Order App",
-    description: "A full-stack MERN application with user authentication, product management, shopping cart, and payment integration using Stripe.",
+    description: "A full-stack MERN food order app with user authentication, meal management, cart functionality, and Stripe payment integration. Key features include adding meals to a cart, a chatbot for customer support, responsive design, order history tracking, secure sign-in/signup, and meal search functionality.",
     image: "https://images.unsplash.com/photo-1573470571028-a0ca7a723959?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tags: ["React", "Node.js", "MongoDB", "Express"],
+    tags: ["React", "Node.js"],
     demoLink: "#",
     githubLink: "#"
   },
   {
     title: "Event Management Website",
-    description: "A responsive dashboard for social media analytics with real-time data visualization using Socket.io and Chart.js.",
+    description: "A React-based frontend for an event management web app, built with Tailwind CSS, focusing on a responsive UI with event organization and management tools. Key features include adding, deleting, editing, and updating events, a dashboard for upcoming and past events, and a fully responsive design.",
     image: "https://images.unsplash.com/photo-1561489396-888724a1543d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tags: ["React", "Chart.js", "Socket.io", "Express"],
+    tags: ["React", "Node.js", "Socket.io", "Express"],
     demoLink: "#",
     githubLink: "https://eventwebbybsadiq.netlify.app/"
   },
   {
     title: "Blainy Ai Research Paper",
-    description: "A collaborative task management application with real-time updates, drag-and-drop interface, and team collaboration features.",
+    description: "A React-based frontend for the Blainy AI research paper web app, built with TypeScript and Tailwind CSS, focusing on a responsive UI with paper management and citation tools. Key features include citation generation, responsive UI, and dark/light mode support.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHfc2tovo-_mlyQ5XkpNxKJhxZW3hmc9oQ0ncsFZp6tg&s&ec=72940544",
     tags: ["React", "Redux", "MongoDB", "Express"],
     demoLink: "#",
