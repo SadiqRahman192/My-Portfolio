@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { Card, CardContent } from "./ui/card";
 import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
-import emailjs from "emailjs-com";
 
-const Contact = () => {
+export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,11 +17,6 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-
-  // Initialize EmailJS with the Public Key from .env
-  useEffect(() => {
-    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -100,7 +95,6 @@ const Contact = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
             Get In <span className="text-gradient">Touch</span>
           </h2>
-
           <div className="flex flex-col md:flex-row gap-8">
             <motion.div
               className="w-full md:w-2/5"
@@ -111,7 +105,9 @@ const Contact = () => {
             >
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    Contact Information
+                  </h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="p-2 bg-primary/10 rounded-full mt-1">
@@ -149,7 +145,9 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="font-medium">Location</p>
-                        <p className="text-muted-foreground">Lahore, Pakistan</p>
+                        <p className="text-muted-foreground">
+                          Lahore, Pakistan
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -176,7 +174,6 @@ const Contact = () => {
                 </CardContent>
               </Card>
             </motion.div>
-
             <motion.div
               className="w-full md:w-3/5"
               initial={{ opacity: 0, x: 50 }}
@@ -186,15 +183,21 @@ const Contact = () => {
             >
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4">Send Me a Message</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    Send Me a Message
+                  </h3>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <label htmlFor="name" className="block mb-1 font-medium">
+                      <label
+                        htmlFor="name"
+                        className="block mb-1 font-medium"
+                      >
                         Name
                       </label>
                       <Input
+                        type="text"
+                        name="name"  // Changed from user_name to name
                         id="name"
-                        name="name"
                         placeholder="Your name"
                         value={formData.name}
                         onChange={handleChange}
@@ -203,13 +206,16 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block mb-1 font-medium">
+                      <label
+                        htmlFor="email"
+                        className="block mb-1 font-medium"
+                      >
                         Email
                       </label>
                       <Input
-                        id="email"
-                        name="email"
                         type="email"
+                        name="email"  // Changed from user_email to email
+                        id="email"
                         placeholder="Your email"
                         value={formData.email}
                         onChange={handleChange}
@@ -218,35 +224,28 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="title" className="block mb-1 font-medium">
-                        Subject
-                      </label>
-                      <Input
-                        id="title"
-                        name="title"
-                        placeholder="Enter a subject"
-                        value={formData.title}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block mb-1 font-medium">
+                      <label
+                        htmlFor="message"
+                        className="block mb-1 font-medium"
+                      >
                         Message
                       </label>
                       <Textarea
-                        id="message"
                         name="message"
+                        id="message"
                         placeholder="Your message"
+                        rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        rows={5}
                         required
                       />
                     </div>
 
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    <Button
+                      type="submit"
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>

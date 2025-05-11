@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
 import hero1 from '../public/lovable-uploads/heroimage.png'; // Adjust the path based on your structure
@@ -10,6 +11,45 @@ const Hero = () => {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // State for typing animation (name)
+  const [typedName, setTypedName] = useState("");
+  const [isTypingName, setIsTypingName] = useState(true);
+  const fullNameText = "Hi, I am Sadiq Izhar";
+  const typingSpeedName = 80; // High speed for smoothness (50ms per character)
+
+  // State for typing animation (role)
+  const [typedRole, setTypedRole] = useState("");
+  const [isTypingRole, setIsTypingRole] = useState(true);
+  const fullRoleText = "MERN Stack Developer";
+  const typingSpeedRole = 80; // High speed for smoothness (50ms per character)
+
+  useEffect(() => {
+    let nameIndex = 0;
+    const nameTimer = setInterval(() => {
+      if (nameIndex < fullNameText.length) {
+        setTypedName(fullNameText.substring(0, nameIndex + 1));
+        nameIndex++;
+      } else {
+        setIsTypingName(false);
+        clearInterval(nameTimer);
+
+        // Start role typing after name typing is complete
+        let roleIndex = 0;
+        const roleTimer = setInterval(() => {
+          if (roleIndex < fullRoleText.length) {
+            setTypedRole(fullRoleText.substring(0, roleIndex + 1));
+            roleIndex++;
+          } else {
+            setIsTypingRole(false);
+            clearInterval(roleTimer);
+          }
+        }, typingSpeedRole);
+      }
+    }, typingSpeedName);
+
+    return () => clearInterval(nameTimer);
+  }, []); // Runs once on mount
 
   return (
     <section
@@ -30,7 +70,7 @@ const Hero = () => {
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary shadow-xl">
               <img
                 src={hero1}
-                alt="Sadiq "
+                alt="Sadiq"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -41,10 +81,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="block">Hi, I am</span>
-            <span className="text-gradient text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
-              Sadiq Izar
+            <span className="inline-block">
+              {isTypingName ? typedName : fullNameText}
             </span>
+            <span className="inline-block ml-2 animate-pulse">|</span>
           </motion.h1>
 
           <motion.h2
@@ -53,7 +93,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="inline-block">MERN Stack Developer</span>
+            <span className="inline-block">
+              {isTypingRole ? typedRole : fullRoleText}
+            </span>
             <span className="inline-block ml-2 animate-pulse">|</span>
           </motion.h2>
 

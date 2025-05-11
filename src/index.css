@@ -154,3 +154,21 @@
     transform: translateX(-100%); /* Move fully to the left */
   }
 }
+
+@media (max-width: 640px) {
+
+  .slider img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Styles for screens 768px and wider */
+  .slider img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
