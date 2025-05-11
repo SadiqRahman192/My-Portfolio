@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import sadiq1 from "../public/lovable-uploads/sadiq1.png"
 
 const About = () => {
   return (
@@ -27,7 +28,7 @@ const About = () => {
               <div className="relative w-full aspect-square max-w-sm mx-auto">
                 <div className="absolute inset-0 bg-primary/20 rounded-lg -rotate-6"></div>
                 <img 
-                  src="../public/lovable-uploads/sadiq1.jpg" 
+                  src={sadiq1} 
                   alt="Sadiq Izar"
                   className="rounded-lg relative z-10 w-full h-full object-cover"
                 />

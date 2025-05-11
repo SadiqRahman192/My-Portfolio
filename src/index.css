@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
 
 @layer base {
   html {
@@ -97,4 +98,59 @@
   margin: 0;
   padding: 0;
   text-align: inherit;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1400px; /* Width for visible area */
+}
+
+.slider {
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  height: 150px;
+  display: flex;
+  animation: none; /* Default no animation (to apply unique animations later) */
+}
+
+.slider img {
+  width: 150px;
+  height: 150px;
+}
+
+#slider1 {
+  margin-bottom: 20px;
+}
+
+#slider2 {
+  margin-top: 20px;
+}
+
+#slider1 .slider {
+  animation: slide1 11s linear infinite;
+}
+
+#slider2 .slider {
+  animation: slide2 11s linear infinite;
+}
+
+@keyframes slide1 {
+  0% {
+    transform: translateX(-100%); /* Start off-screen on the left */
+  }
+  100% {
+    transform: translateX(calc(+100%)); /* Move fully to the right */
+  }
+}
+
+@keyframes slide2 {
+  0% {
+    transform: translateX(+100%); /* Start off-screen on the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move fully to the left */
+  }
 }
