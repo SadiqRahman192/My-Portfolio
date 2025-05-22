@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
+import { Download } from "lucide-react";
 // Import a profile image from the available uploads
 import profileImage from "../public/lovable-uploads/sadiq1.png";
 
@@ -130,6 +131,15 @@ const Hero = () => {
               onClick={() => scrollToSection("contact")}
             >
               Contact Me
+            </Button>
+            <Button
+              size="lg"
+              variant="secondary"
+              className="px-6"
+              onClick={() => window.open("/cv.pdf", "_blank")}
+            >
+              <Download className="mr-2" size={18} />
+              Download CV
             </Button>
           </motion.div>
         </div>
