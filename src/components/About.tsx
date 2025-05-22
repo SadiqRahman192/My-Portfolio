@@ -25,21 +25,21 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-xl font-medium mb-4">
-                MERN Stack Developer & Web Design Enthusiast
+              <h3 className="text-xl font-medium mb-4 text-center">
+                MERN Stack Developer 
               </h3>
               
-              <p className="text-muted-foreground mb-4">
+              <p className="text-muted-foreground mb-4 text-center">
                 I'm Sadiq Izar, a passionate MERN Stack developer with extensive experience in building modern web applications. I specialize in creating responsive, user-friendly interfaces with React while handling complex backend operations with Node.js, Express, and MongoDB.
               </p>
               
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 text-center">
                 My goal is to craft clean, efficient code that solves real-world problems. I'm constantly learning new technologies and techniques to improve my skills and deliver better results for clients and users.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <motion.div 
-                  className="bg-sky-500 rounded-lg p-6 text-white flex flex-col shadow-lg"
+                  className="bg-sky-500 rounded-lg p-6 text-white flex flex-col shadow-lg text-center"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -51,7 +51,7 @@ const About = () => {
                 </motion.div>
                 
                 <motion.div 
-                  className="bg-sky-500 rounded-lg p-6 text-white flex flex-col shadow-lg"
+                  className="bg-sky-500 rounded-lg p-6 text-white flex flex-col shadow-lg text-center"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -63,7 +63,7 @@ const About = () => {
                 </motion.div>
               </div>
               
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-wrap gap-4 mt-8 text-center">
                 <a href="https://github.com/SadiqRahman192" target="_blank" rel="noopener noreferrer">
                   <Button className="gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
