@@ -63,7 +63,7 @@ const About = () => {
                 </motion.div>
               </div>
               
-              <div className="flex flex-wrap gap-4 mt-8 text-center">
+              <div className="flex flex-wrap gap-4 mt-8 justify-center justify-center">
                 <a href="https://github.com/SadiqRahman192" target="_blank" rel="noopener noreferrer">
                   <Button className="gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
