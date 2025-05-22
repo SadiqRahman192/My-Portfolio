@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
 import { Download } from "lucide-react";
 // Import a profile image from the available uploads
-import profileImage from "../public/lovable-uploads/sadiq1.png";
+import profileImage from "../public/lovable-uploads/heroimage.png";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
