@@ -25,10 +25,6 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-xl font-medium mb-4 text-center">
-                MERN Stack Developer 
-              </h3>
-              
               <p className="text-muted-foreground mb-4 text-center">
                 I'm Sadiq Izar, a passionate MERN Stack developer with extensive experience in building modern web applications. I specialize in creating responsive, user-friendly interfaces with React while handling complex backend operations with Node.js, Express, and MongoDB.
               </p>
