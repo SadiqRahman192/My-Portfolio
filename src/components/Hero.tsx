@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
-import hero1 from '../public/SadiqFinal cv.pdf'; // Adjust the path based on your structure
+import hero1 from '../public/SadiqFinal cv.pdf'; 
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
