@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
-import hero1 from '../public/SadiqFinal cv.pdf'; 
+import hero1 from '../public/cv.pdf'; 
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -126,7 +126,7 @@ const Hero = () => {
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = "/cv.pdf"; // Path to the PDF in public folder
-                link.download = "Sadiq-Izhar-CV.pdf";
+                link.download = "cv.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
