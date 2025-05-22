@@ -1,18 +1,29 @@
-
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
-import { Download } from "lucide-react";
-// Import a profile image from the available uploads
-import profileImage from "../public/lovable-uploads/heroimage.png";
+import hero1 from "../public/lovable-uploads/heroimage.png"; // Adjust the path based on your structure
+import cvpdf from "../public/cv.pdf";
 
-const Hero = () => {
+interface DownloadButtonProps {
+  fileName: string;
+}
+  const Hero: React.FC<DownloadButtonProps> = ({ fileName }) => {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleDownload = () => {
+    const url = cvpdf;
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   // State for typing animation (name)
@@ -23,7 +34,7 @@ const Hero = () => {
 
   // State for typing animation (role)
   const [typedRole, setTypedRole] = useState("");
-  const [isTypingRole, setIsTypingRole] = useState(false); // Changed to false initially
+  const [isTypingRole, setIsTypingRole] = useState(true);
   const fullRoleText = "MERN Stack Developer";
   const typingSpeedRole = 80; // High speed for smoothness (50ms per character)
 
@@ -35,33 +46,24 @@ const Hero = () => {
         nameIndex++;
       } else {
         setIsTypingName(false);
-        setIsTypingRole(true); // Start typing role only after name is complete
-
-        // Clear the name timer
         clearInterval(nameTimer);
+
+        // Start role typing after name typing is complete
+        let roleIndex = 0;
+        const roleTimer = setInterval(() => {
+          if (roleIndex < fullRoleText.length) {
+            setTypedRole(fullRoleText.substring(0, roleIndex + 1));
+            roleIndex++;
+          } else {
+            setIsTypingRole(false);
+            clearInterval(roleTimer);
+          }
+        }, typingSpeedRole);
       }
     }, typingSpeedName);
 
     return () => clearInterval(nameTimer);
   }, []); // Runs once on mount
-
-  // Separate useEffect for role typing animation
-  useEffect(() => {
-    if (isTypingRole) {
-      let roleIndex = 0;
-      const roleTimer = setInterval(() => {
-        if (roleIndex < fullRoleText.length) {
-          setTypedRole(fullRoleText.substring(0, roleIndex + 1));
-          roleIndex++;
-        } else {
-          setIsTypingRole(false);
-          clearInterval(roleTimer);
-        }
-      }, typingSpeedRole);
-
-      return () => clearInterval(roleTimer);
-    }
-  }, [isTypingRole, fullRoleText, typingSpeedRole]);
 
   return (
     <section
@@ -81,8 +83,8 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-primary/30 blur-3xl animate-pulse-light" />
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary shadow-xl">
               <img
-                src={profileImage}
-                alt="Sadiq Izhar"
+                src={hero1}
+                alt="Sadiq"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -124,6 +126,12 @@ const Hero = () => {
             >
               View Projects
             </Button>
+            <button
+              onClick={handleDownload}
+              className="inline-block px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+            >
+              Download CV
+            </button>
             <Button
               size="lg"
               variant="outline"
@@ -131,15 +139,6 @@ const Hero = () => {
               onClick={() => scrollToSection("contact")}
             >
               Contact Me
-            </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="px-6"
-              onClick={() => window.open("/cv.pdf", "_blank")}
-            >
-              <Download className="mr-2" size={18} />
-              Download CV
             </Button>
           </motion.div>
         </div>
