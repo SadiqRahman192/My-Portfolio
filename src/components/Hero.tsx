@@ -1,7 +1,10 @@
+
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
+// Import a profile image from the available uploads
+import profileImage from "../public/lovable-uploads/sadiq1.png";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -19,7 +22,7 @@ const Hero = () => {
 
   // State for typing animation (role)
   const [typedRole, setTypedRole] = useState("");
-  const [isTypingRole, setIsTypingRole] = useState(true);
+  const [isTypingRole, setIsTypingRole] = useState(false); // Changed to false initially
   const fullRoleText = "MERN Stack Developer";
   const typingSpeedRole = 80; // High speed for smoothness (50ms per character)
 
@@ -31,24 +34,33 @@ const Hero = () => {
         nameIndex++;
       } else {
         setIsTypingName(false);
-        clearInterval(nameTimer);
+        setIsTypingRole(true); // Start typing role only after name is complete
 
-        // Start role typing after name typing is complete
-        let roleIndex = 0;
-        const roleTimer = setInterval(() => {
-          if (roleIndex < fullRoleText.length) {
-            setTypedRole(fullRoleText.substring(0, roleIndex + 1));
-            roleIndex++;
-          } else {
-            setIsTypingRole(false);
-            clearInterval(roleTimer);
-          }
-        }, typingSpeedRole);
+        // Clear the name timer
+        clearInterval(nameTimer);
       }
     }, typingSpeedName);
 
     return () => clearInterval(nameTimer);
   }, []); // Runs once on mount
+
+  // Separate useEffect for role typing animation
+  useEffect(() => {
+    if (isTypingRole) {
+      let roleIndex = 0;
+      const roleTimer = setInterval(() => {
+        if (roleIndex < fullRoleText.length) {
+          setTypedRole(fullRoleText.substring(0, roleIndex + 1));
+          roleIndex++;
+        } else {
+          setIsTypingRole(false);
+          clearInterval(roleTimer);
+        }
+      }, typingSpeedRole);
+
+      return () => clearInterval(roleTimer);
+    }
+  }, [isTypingRole, fullRoleText, typingSpeedRole]);
 
   return (
     <section
@@ -68,8 +80,8 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-primary/30 blur-3xl animate-pulse-light" />
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary shadow-xl">
               <img
-                src={hero1}
-                alt="Sadiq"
+                src={profileImage}
+                alt="Sadiq Izhar"
                 className="w-full h-full object-cover"
               />
             </div>
