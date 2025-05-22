@@ -1,6 +1,6 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import sadiq1 from "../public/lovable-uploads/sadiq1.png"
 
 const About = () => {
   return (
@@ -17,28 +17,11 @@ const About = () => {
             About <span className="text-gradient">Me</span>
           </h2>
           
-          <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="flex flex-col gap-8">
             <motion.div 
-              className="w-full md:w-2/5"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="relative w-full aspect-square max-w-sm mx-auto">
-                <div className="absolute inset-0 bg-primary/20 rounded-lg -rotate-6"></div>
-                <img 
-                  src={sadiq1} 
-                  alt="Sadiq Izar"
-                  className="rounded-lg relative z-10 w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className="w-full md:w-3/5"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="w-full"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
@@ -54,7 +37,33 @@ const About = () => {
                 My goal is to craft clean, efficient code that solves real-world problems. I'm constantly learning new technologies and techniques to improve my skills and deliver better results for clients and users.
               </p>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <motion.div 
+                  className="bg-sky-500 rounded-lg p-6 text-white flex flex-col shadow-lg"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h4 className="text-xl font-bold mb-2">Amoxt Pvt Ltd - Lahore</h4>
+                  <p className="text-sky-100 font-medium mb-3">March 2025 - Present</p>
+                  <p className="text-lg">Junior MERN Developer</p>
+                </motion.div>
+                
+                <motion.div 
+                  className="bg-sky-500 rounded-lg p-6 text-white flex flex-col shadow-lg"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <h4 className="text-xl font-bold mb-2">Amoxt Pvt Ltd - Lahore</h4>
+                  <p className="text-sky-100 font-medium mb-3">Sep 2024 - Dec 2024</p>
+                  <p className="text-lg">Training/Mentorship Program</p>
+                </motion.div>
+              </div>
+              
+              <div className="flex flex-wrap gap-4 mt-8">
                 <a href="https://github.com/SadiqRahman192" target="_blank" rel="noopener noreferrer">
                   <Button className="gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
