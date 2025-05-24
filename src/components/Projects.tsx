@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import image from "../public/heroFood.png"
+
 
 const projects = [
   {
@@ -57,7 +59,7 @@ const Projects = () => {
                 <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow">
                   <div className="aspect-video overflow-hidden">
                     <img 
-                      src={project.image} 
+                      src={image}  
                       alt={project.title} 
                       className="w-full h-full object-cover transition-transform hover:scale-105 duration-700"
                     />
