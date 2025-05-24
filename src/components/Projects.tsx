@@ -9,8 +9,6 @@ const projects = [
   {
     title: "Food Order App",
     description: "A full-stack MERN food order app with user authentication, meal management, cart functionality, and Stripe payment integration. Key features include adding meals to a cart, a chatbot for customer support, responsive design, order history tracking, secure sign-in/signup, and meal search functionality.",
-    image: "https://images.unsplash.com/photo-1573470571028-a0ca7a723959?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tags: ["React", "Node.js"],
     demoLink: "https://react-foodfull-stack-web-b2yu.vercel.app",
     githubLink: "https://github.com/SadiqRahman192/sadiq-izar-portfolio-verse"
   },
