@@ -43,7 +43,7 @@ const About = () => {
                 >
                   <h4 className="text-xl font-bold mb-2">Amoxt Pvt Ltd - Lahore</h4>
                   <p className="text-sky-100 font-medium mb-3">March 2025 - Present</p>
-                  <p className="text-lg">Trainee MERN Developer</p>
+                  <p className="text-lg">Associate Software Engineer Intern – Blainy</p>
                 </motion.div>
                 
                 <motion.div 
@@ -55,7 +55,7 @@ const About = () => {
                 >
                   <h4 className="text-xl font-bold mb-2">Amoxt Pvt Ltd - Lahore</h4>
                   <p className="text-sky-100 font-medium mb-3">Sep 2024 - Dec 2024</p>
-                  <p className="text-lg">Intern</p>
+                  <p className="text-lg">Associate Software Engineer Trainee</p>
                 </motion.div>
               </div>
               
