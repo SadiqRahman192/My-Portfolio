@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
 import hero1 from "../public/lovable-uploads/heroimage.png"; // Adjust the path based on your structure
-import cvpdf from "../public/cv.pdf";
+import cvpdf from "../public/SadiqFinal.pdf";
 
 interface DownloadButtonProps {
   fileName: string;
