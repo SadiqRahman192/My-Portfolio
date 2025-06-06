@@ -10,23 +10,25 @@ const projects = [
     title: "Food Order App",
     description: "A full-stack MERN food order app with user authentication, meal management, cart functionality, and Stripe payment integration. Key features include adding meals to a cart, a chatbot for customer support, responsive design, order history tracking, secure sign-in/signup, and meal search functionality.",
     demoLink: "https://react-foodfull-stack-web-b2yu.vercel.app",
-    githubLink: "https://github.com/SadiqRahman192/sadiq-izar-portfolio-verse"
+    githubLink: "https://github.com/SadiqRahman192/sadiq-izar-portfolio-verse",
+    tags: ["React", "MERN", "Stripe", "Chatbot"],
+    image: "/src/public/heroFood.png"
   },
   {
     title: "Event Management Website",
     description: "A React-based frontend for an event management web app, built with Tailwind CSS, focusing on a responsive UI with event organization and management tools. Key features include adding, deleting, editing, and updating events, a dashboard for upcoming and past events, and a fully responsive design.",
-    image: "https://images.unsplash.com/photo-1561489396-888724a1543d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["React", "Node.js", "Socket.io", "Express"],
     demoLink: "#",
-    githubLink: "https://eventwebbybsadiq.netlify.app/"
+    githubLink: "https://eventwebbybsadiq.netlify.app/",
+    image: "/src/public/heroEvent.png"
   },
   {
     title: "Blainy Ai Research Paper",
     description: "A React-based frontend for the Blainy AI research paper web app, built with TypeScript and Tailwind CSS, focusing on a responsive UI with paper management and citation tools. Key features include citation generation, responsive UI, and dark/light mode support.",
-    image: "https://images.genai.works/image_ef8535309e.jpg?width=900&height=900&quality=50",
-    tags: ["React", "Redux", "MongoDB", "Express"],
+    tags: ["React", "TypeScript", "Tailwind", "Wails"],
     demoLink: "#",
-    githubLink: "#"
+    githubLink: "#",
+    image: "/src/public/heroBlainy.png"
   },
 ];
 
@@ -57,7 +59,7 @@ const Projects = () => {
                 <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow">
                   <div className="aspect-video overflow-hidden">
                     <img 
-                      src={image}  
+                      src={project.image}  
                       alt={project.title} 
                       className="w-full h-full object-cover transition-transform hover:scale-105 duration-700"
                     />
