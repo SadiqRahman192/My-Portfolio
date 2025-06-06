@@ -2,7 +2,10 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import image from "../public/heroFood.png"
+import heroEvent from "../public/heroEvent.png"
+import heroFood from "../public/heroFood.png"
+import heroBlainy from "../public/heroBlainy.png"
+
 
 
 const projects = [
