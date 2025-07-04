@@ -21,8 +21,8 @@ const projects = [
     title: "Event Management Website",
     description: "A React-based frontend for an event management web app, built with Tailwind CSS, focusing on a responsive UI with event organization and management tools. Key features include adding, deleting, editing, and updating events, a dashboard for upcoming and past events, and a fully responsive design.",
     tags: ["React", "Node.js", "Socket.io", "Express"],
-    demoLink: "#",
-    githubLink: "https://eventpromernapp.netlify.app/",
+    demoLink: "https://eventpromernapp.netlify.app/",
+    githubLink: "https://github.com/SadiqRahman192/",
     image: "/src/public/heroEvent.png"
   },
   {
