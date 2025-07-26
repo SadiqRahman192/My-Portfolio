@@ -6,7 +6,6 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   const [isChatbotOpen, setChatbotOpen] = useState(false);
@@ -28,14 +27,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar isChatbotOpen={isChatbotOpen} setChatbotOpen={setChatbotOpen} />
-      <Hero />
+      <Navbar />
+      <Hero fileName={""} />
       <About />
       <Skills />
       <Projects />
       <Contact />
       <Footer />
-      <Chatbot isOpen={isChatbotOpen} setIsOpen={setChatbotOpen} />
     </div>
   );
 };

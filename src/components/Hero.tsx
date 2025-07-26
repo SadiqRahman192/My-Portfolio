@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import ThreeDAnimation from "./ThreeDAnimation";
 import hero1 from "../public/lovable-uploads/heroimage.png"; // Adjust the path based on your structure
-import cv from "../public/cv.pdf.pdf";
+import cv from "../public/FullStackDevCv.pdf";
 
 interface DownloadButtonProps {
   fileName: string;
@@ -29,13 +29,13 @@ interface DownloadButtonProps {
   // State for typing animation (name)
   const [typedName, setTypedName] = useState("");
   const [isTypingName, setIsTypingName] = useState(true);
-  const fullNameText = "Hi, I am Sadiq Izhar";
+  const fullNameText = "Hi, I am Sadiq Izar";
   const typingSpeedName = 80; // High speed for smoothness (50ms per character)
 
   // State for typing animation (role)
   const [typedRole, setTypedRole] = useState("");
   const [isTypingRole, setIsTypingRole] = useState(true);
-  const fullRoleText = "MERN Stack Developer";
+  const fullRoleText = "Full Stack Developer";
   const typingSpeedRole = 80; // High speed for smoothness (50ms per character)
 
   useEffect(() => {
@@ -121,7 +121,7 @@ interface DownloadButtonProps {
           >
             <Button
               size="lg"
-              className="px-6"
+              className="px-6 text-white"
               onClick={() => scrollToSection("projects")}
             >
               View Projects

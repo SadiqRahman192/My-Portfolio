@@ -100,15 +100,40 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip
 
+// Define a more specific type for TooltipPayload items
+interface CustomTooltipPayload {
+  dataKey?: string | number;
+  name?: string | number;
+  value?: string | number | React.ReactNode;
+  color?: string;
+  fill?: string;
+  payload?: any; // The original data object
+}
+
 const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
-    React.ComponentProps<"div"> & {
+  React.ComponentProps<"div"> & {
       hideLabel?: boolean
       hideIndicator?: boolean
       indicator?: "line" | "dot" | "dashed"
       nameKey?: string
       labelKey?: string
+      active?: boolean
+      payload?: CustomTooltipPayload[] // Use custom type here
+      label?: string | number
+      labelFormatter?: (
+        value: string | number | React.ReactNode, // Allow React.ReactNode here
+        payload: CustomTooltipPayload[] // Use custom type here
+      ) => React.ReactNode
+      labelClassName?: string
+      formatter?: (
+        value: string | number,
+        name: string,
+        item: CustomTooltipPayload, // Use custom type here
+        index: number,
+        payload: any
+      ) => React.ReactNode
+      color?: string
     }
 >(
   (
@@ -145,9 +170,23 @@ const ChartTooltipContent = React.forwardRef<
           : itemConfig?.label
 
       if (labelFormatter) {
+        // Ensure value is string or number for labelFormatter
+        let formattedValue: string | number;
+        if (typeof value === "string" || typeof value === "number") {
+          formattedValue = value;
+        } else if (React.isValidElement(value)) {
+          // If it's a React element, convert to string (e.g., for display purposes)
+          // You might want a more sophisticated way to represent React elements as strings
+          formattedValue = "";
+        } else if (value === true || value === false) {
+          formattedValue = String(value); // Convert boolean to string
+        } else {
+          formattedValue = String(value); // Fallback for other ReactNode types (null, undefined)
+        }
+
         return (
           <div className={cn("font-medium", labelClassName)}>
-            {labelFormatter(value, payload)}
+            {labelFormatter(formattedValue, payload)}
           </div>
         )
       }
@@ -186,7 +225,7 @@ const ChartTooltipContent = React.forwardRef<
           {payload.map((item, index) => {
             const key = `${nameKey || item.name || item.dataKey || "value"}`
             const itemConfig = getPayloadConfigFromPayload(config, item, key)
-            const indicatorColor = color || item.payload.fill || item.color
+            const indicatorColor = color || item.fill || item.color
 
             return (
               <div
@@ -197,7 +236,20 @@ const ChartTooltipContent = React.forwardRef<
                 )}
               >
                 {formatter && item?.value !== undefined && item.name ? (
-                  formatter(item.value, item.name, item, index, item.payload)
+                  (() => {
+                    let valueToFormat: string | number;
+                    if (typeof item.value === "string" || typeof item.value === "number") {
+                      valueToFormat = item.value;
+                    } else if (item.value === true || item.value === false) {
+                      valueToFormat = String(item.value); // Convert boolean to string
+                    } else {
+                      // For other ReactNode types (null, undefined, React elements),
+                      // convert to string. An empty string for React elements might be appropriate
+                      // if they are not meant to be formatted as text.
+                      valueToFormat = React.isValidElement(item.value) ? "" : String(item.value);
+                    }
+                    return formatter(valueToFormat, String(item.name), item, index, item.payload);
+                  })()
                 ) : (
                   <>
                     {itemConfig?.icon ? (
@@ -238,7 +290,10 @@ const ChartTooltipContent = React.forwardRef<
                       </div>
                       {item.value && (
                         <span className="font-mono font-medium tabular-nums text-foreground">
-                          {item.value.toLocaleString()}
+                          {/* Ensure item.value is number or string for toLocaleString, or convert to string */}
+                          {typeof item.value === 'number' || typeof item.value === 'string'
+                            ? item.value.toLocaleString()
+                            : String(item.value)}
                         </span>
                       )}
                     </div>
@@ -256,13 +311,24 @@ ChartTooltipContent.displayName = "ChartTooltip"
 
 const ChartLegend = RechartsPrimitive.Legend
 
+// Define a more specific type for LegendPayload items
+interface CustomLegendPayload {
+  value?: string | number;
+  id?: string | number;
+  type?: string;
+  color?: string;
+  payload?: any; // The original data object
+  dataKey?: string | number; // Add dataKey here
+}
+
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<"div"> &
-    Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
-      hideIcon?: boolean
-      nameKey?: string
-    }
+  React.ComponentProps<"div"> & {
+    payload?: CustomLegendPayload[] // Use custom type here
+    verticalAlign?: "top" | "middle" | "bottom"
+    hideIcon?: boolean
+    nameKey?: string
+  }
 >(
   (
     { className, hideIcon = false, payload, verticalAlign = "bottom", nameKey },

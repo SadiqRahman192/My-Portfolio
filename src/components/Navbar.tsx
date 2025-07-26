@@ -3,12 +3,9 @@ import ThemeToggle from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const Navbar = ({ setChatbotOpen, isChatbotOpen }) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Log props to verify they are passed correctly
-  console.log("Navbar props:", { isChatbotOpen, setChatbotOpen });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,10 +73,10 @@ const Navbar = ({ setChatbotOpen, isChatbotOpen }) => {
           </ul>
           <ThemeToggle />
           <Button
+          className="text-white"
             variant="default"
             onClick={() => {
-              console.log("Let's Chat clicked, toggling isChatbotOpen:", !isChatbotOpen);
-              setChatbotOpen(!isChatbotOpen);
+              window.open("https://wa.me/923318939600", "_blank");
             }}
           >
             Let's Chat
@@ -145,8 +142,7 @@ const Navbar = ({ setChatbotOpen, isChatbotOpen }) => {
                 variant="default"
                 className="w-full"
                 onClick={() => {
-                  console.log("Mobile Let's Chat clicked, toggling isChatbotOpen:", !isChatbotOpen);
-                  setChatbotOpen(!isChatbotOpen);
+                  window.open("https://wa.me/923318939600", "_blank");
                   setMobileMenuOpen(false);
                 }}
               >

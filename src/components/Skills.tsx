@@ -10,7 +10,8 @@ import sadiq10 from "../public/icons/images-removebg-preview.png"; // Adjust the
 import sadiq11 from "../public/icons/ts2.png"; // Adjust the path based on your structure
 import sadiq12 from "../public/icons/mongodb-icon-md.png"; // Adjust the path based on your structure
 import sadiq13 from "../public/icons/uiux.png"; // Adjust the path based on your structure
-
+import sadiq14 from "../public/icons/1.png"; 
+import sadiq15 from "../public/icons/2.png"; 
 
 const skillsData = [
   {

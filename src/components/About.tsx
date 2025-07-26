@@ -41,9 +41,9 @@ const About = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                 >
-                  <h4 className="text-xl font-bold mb-2">Amoxt Pvt Ltd - Lahore</h4>
-                  <p className="text-sky-100 font-medium mb-3">March 2025 - Present</p>
-                  <p className="text-lg">Associate Software Engineer Intern – Blainy</p>
+                  <h4 className="text-xl font-bold mb-2">Freelance - Remote</h4>
+                  <p className="text-sky-100 font-medium mb-3">Jan 2024 - Present</p>
+                  <p className="text-lg">Full Stack Developer</p>
                 </motion.div>
                 
                 <motion.div 
@@ -54,12 +54,12 @@ const About = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   <h4 className="text-xl font-bold mb-2">Amoxt Pvt Ltd - Lahore</h4>
-                  <p className="text-sky-100 font-medium mb-3">Sep 2024 - Dec 2024</p>
-                  <p className="text-lg">Associate Software Engineer Trainee</p>
+                  <p className="text-sky-100 font-medium mb-3">Sep 2024 - Present</p>
+                  <p className="text-lg">Associate Software Engineer - Frontend Role</p>
                 </motion.div>
               </div>
               
-              <div className="flex flex-wrap gap-4 mt-8 justify-center justify-center">
+              <div className="flex flex-wrap gap-4 mt-8 justify-center">
                 <a href="https://github.com/SadiqRahman192" target="_blank" rel="noopener noreferrer">
                   <Button className="gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
